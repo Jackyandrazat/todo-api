@@ -1,0 +1,138 @@
+{
+  "info": {
+    "_postman_id": "a1f8c242-1234-4a22-bfd2-0dcde7e12345",
+    "name": "ToDo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"user1\",\n  \"email\": \"user1@mail.com\",\n  \"password\": \"password\"\n}"
+        },
+        "url": { "raw": "http://localhost:8000/api/register" }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"user1\",\n  \"password\": \"password\"\n}"
+        },
+        "url": { "raw": "http://localhost:8000/api/login" }
+      }
+    },
+    {
+      "name": "Get All Checklists",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "http://localhost:8000/api/checklist" }
+      }
+    },
+    {
+      "name": "Create Checklist",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Belanja Mingguan\"\n}"
+        },
+        "url": { "raw": "http://localhost:8000/api/checklist" }
+      }
+    },
+    {
+      "name": "Delete Checklist",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "http://localhost:8000/api/checklist/1" }
+      }
+    },
+    {
+      "name": "Get Checklist Items",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "http://localhost:8000/api/checklist/1/item" }
+      }
+    },
+    {
+      "name": "Create Checklist Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Beli Sayur\"\n}"
+        },
+        "url": { "raw": "http://localhost:8000/api/checklist/1/item" }
+      }
+    },
+    {
+      "name": "Get Checklist Item Detail",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "http://localhost:8000/api/checklist/1/item/1" }
+      }
+    },
+    {
+      "name": "Toggle Checklist Item Status",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "http://localhost:8000/api/checklist/1/item/1" }
+      }
+    },
+    {
+      "name": "Delete Checklist Item",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": { "raw": "http://localhost:8000/api/checklist/1/item/1" }
+      }
+    },
+    {
+      "name": "Rename Checklist Item",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Beli Buah\"\n}"
+        },
+        "url": { "raw": "http://localhost:8000/api/checklist/1/item/rename/1" }
+      }
+    }
+  ]
+}
